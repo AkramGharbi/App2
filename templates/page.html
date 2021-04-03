@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    $(window).load(function()
+{
+    $('#myModal1').modal('show');
+});
+    
+</script>
+</head>
+
+
+ <title>
+ 	Collection de données 
+ </title>
+</head>
+
+
+<body>
+	<h1>To record your voice, click on the next button and start saying the sentence.</h1>
+  <h3>Sentences we need:</h3>
+
+  <ul>
+  <li>3asslema</li>
+  <li>Ahla</li>
+  <li>Salem</li>
+  </ul>
+	<p align="center"></p>
+
+
+
+ 
+        <div class="container">
+  <!-- Trigger the modal with a button -->
+  <a href='/record' align="center"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"> recording</button></a>
+ 
+ {% block content %}
+    {% if res %}
+  <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Result</h4>
+        </div>
+        <div class="modal-body">
+          <p>Save Done, thank you for your time.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    {% else %}
+
+    {% endif %}
+{% endblock content %}
+
+
+
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Loading</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please wait until we upload your voice on our database.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
