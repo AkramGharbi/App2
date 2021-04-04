@@ -22,7 +22,7 @@ class auth:
             os.makedirs(credential_dir)
         credential_path = os.path.join(credential_dir,
                                        'google-drive-credentials.json')
-
+        
         store = Storage(credential_path)
         credentials = store.get()
         if not credentials or credentials.invalid:
